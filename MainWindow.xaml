@@ -1,0 +1,74 @@
+<Window
+	x:Class="PhotoPlay.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:PhotoPlay"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+	mc:Ignorable="d"
+	Title="PhotoPlay">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0" Height="48">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Grid.Column="0" x:Name="NavigationViewButton" Orientation="Horizontal" Margin="6,6,6,6">
+				<Button x:Name="NavigationBackButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+					<AnimatedIcon>
+						<AnimatedIcon.Source>
+							<animatedvisuals:AnimatedBackVisualSource />
+						</AnimatedIcon.Source>
+					</AnimatedIcon>
+				</Button>
+				<Button x:Name="NavigationGlobalButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+					<AnimatedIcon>
+						<AnimatedIcon.Source>
+							<animatedvisuals:AnimatedGlobalNavigationButtonVisualSource />
+						</AnimatedIcon.Source>
+					</AnimatedIcon>
+				</Button>
+				<Button x:Name="NavigationSettButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+					<AnimatedIcon>
+						<AnimatedIcon.Source>
+							<animatedvisuals:AnimatedSettingsVisualSource />
+						</AnimatedIcon.Source>
+					</AnimatedIcon>
+				</Button>
+			</StackPanel>
+			<Grid Grid.Column="1" x:Name="AppTitleBar">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Column="0" Style="{ThemeResource CaptionTextBlockStyle}" Margin="4,0,0,0" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorPrimaryBrush}" Text="{x:Bind GetAppTitleFromSystem()}" />
+				<Grid Grid.Column="1" Margin="12,0,0,0">
+					<Border x:Name="MyBorder" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="{ThemeResource OverlayCornerRadius}" Height="24">
+						<TextBlock x:Name="Block" Loaded="Block_OnLoaded" Style="{ThemeResource CaptionTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorDisabledBrush}" Text="{x:Bind GetVersionForBuild()}" />
+					</Border>
+				</Grid>
+			</Grid>
+			<StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
+				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
+					<FontIcon Glyph="&#xF08C;" FontSize="14" />
+				</Button>
+				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
+					<FontIcon Glyph="&#xE921;" FontSize="10" />
+				</Button>
+				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
+					<FontIcon Glyph="&#xE922;" FontSize="10" x:Name="WindowMaximiseIcon" />
+				</Button>
+				<Button Style="{ThemeResource WindowsButton}" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowClose">
+					<FontIcon Glyph="&#xE8BB;" FontSize="10" />
+				</Button>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</Window>

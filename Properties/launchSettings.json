@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PhotoPlay (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PhotoPlay (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
