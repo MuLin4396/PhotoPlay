@@ -20,14 +20,14 @@
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 			<StackPanel Grid.Column="0" x:Name="NavigationViewButton" Orientation="Horizontal" Margin="6,6,6,6">
-				<Button x:Name="NavigationBackButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+				<Button x:Name="NavigationBackButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationBackButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedBackVisualSource />
 						</AnimatedIcon.Source>
 					</AnimatedIcon>
 				</Button>
-				<Button x:Name="NavigationGlobalButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+				<Button x:Name="NavigationGlobalButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationGlobalButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedGlobalNavigationButtonVisualSource />
@@ -50,7 +50,7 @@
 				</Grid.ColumnDefinitions>
 				<TextBlock Grid.Column="0" Style="{ThemeResource CaptionTextBlockStyle}" Margin="4,0,0,0" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorPrimaryBrush}" Text="{x:Bind GetAppTitleFromSystem()}" />
 				<Grid Grid.Column="1" Margin="12,0,0,0">
-					<Border x:Name="MyBorder" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="{ThemeResource OverlayCornerRadius}" Height="24">
+					<Border x:Name="MyBorder" Background="{ThemeResource LayerOnAcrylicFillColorDefaultBrush}" CornerRadius="{ThemeResource OverlayCornerRadius}" Height="24">
 						<TextBlock x:Name="Block" Loaded="Block_OnLoaded" Style="{ThemeResource CaptionTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorDisabledBrush}" Text="{x:Bind GetVersionForBuild()}" />
 					</Border>
 				</Grid>
@@ -69,6 +69,11 @@
 					<FontIcon Glyph="&#xE8BB;" FontSize="10" />
 				</Button>
 			</StackPanel>
+		</Grid>
+		<Grid Grid.Row="1">
+			<NavigationView x:Name="NavigationView" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False">
+
+			</NavigationView>
 		</Grid>
 	</Grid>
 </Window>

@@ -1,5 +1,3 @@
-using Microsoft.UI.Xaml;
-
 namespace PhotoPlay;
 
 public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
@@ -63,7 +61,7 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 		}
 	}
 
-	private void Block_OnLoaded(object sender, RoutedEventArgs e)
+	private void Block_OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
 	{
 		var textBlock = sender as Microsoft.UI.Xaml.Controls.TextBlock;
 		// 确保文本已渲染
@@ -74,7 +72,18 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 		double textBlockHeight = textBlock.ActualHeight;
 
 		// 设置 Border 的宽度为 TextBlock 宽度 + 8
-		MyBorder.Width  = textBlockWidth + 8;
-		MyBorder.Height = textBlockHeight + 8;
+		MyBorder.Width  = textBlockWidth + 12;
+		MyBorder.Height = textBlockHeight + 16;
+	}
+
+	private void NavigationBackButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+	{
+		if (true) NavigationView.IsPaneOpen = !NavigationView.IsPaneOpen;
+		else throw new System.NotImplementedException();
+	}
+
+	private void NavigationGlobalButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+	{
+		NavigationView.IsPaneOpen = !NavigationView.IsPaneOpen;
 	}
 }
