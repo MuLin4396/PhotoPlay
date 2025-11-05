@@ -42,7 +42,7 @@
 					</AnimatedIcon>
 				</Button>
 			</StackPanel>
-			<Grid Grid.Column="1" x:Name="AppTitleBar">
+			<Grid Grid.Column="1" x:Name="AppTitleBar" SizeChanged="Block1_OnLoaded">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto" />
 					<ColumnDefinition Width="Auto" />
@@ -55,6 +55,15 @@
 					</Border>
 				</Grid>
 			</Grid>
+			<Border Grid.Column="1" x:Name="MyRectangle" Background="Transparent">
+				<Border.ContextFlyout>
+					<MenuFlyout>
+						<MenuFlyout.Items>
+							<MenuFlyoutItem Text="11111"></MenuFlyoutItem>
+						</MenuFlyout.Items>
+					</MenuFlyout>
+				</Border.ContextFlyout>
+			</Border>
 			<StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
 				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
 					<FontIcon Glyph="&#xF08C;" FontSize="14" />
@@ -71,7 +80,21 @@
 			</StackPanel>
 		</Grid>
 		<Grid Grid.Row="1">
-			<NavigationView x:Name="NavigationView" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False" Style="{ThemeResource  WindowsNavigationView}" />
+			<NavigationView x:Name="NavigationView" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False" Style="{ThemeResource  WindowsNavigationView}">
+				<NavigationView.MenuItems>
+					<NavigationViewItem Content="Calendar" Icon="Calendar" />
+					<NavigationViewItem Content="Downloads">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE753;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+					<NavigationViewItem Content="Library">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE8F1;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+				</NavigationView.MenuItems>
+			</NavigationView>
 		</Grid>
 	</Grid>
 </Window>

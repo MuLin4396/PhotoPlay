@@ -24,7 +24,24 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 		ExtendsContentIntoTitleBar = true;
 
-		SetTitleBar(AppTitleBar);
+		DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
+
+		// Activated += AppWindow_Activated;
+
+		_appWindow.Changed += AppWindow_Changed;
+
+		Closed += (s, e) => _appWindow.Changed -= AppWindow_Changed;
+	}
+
+	// private void AppWindow_Activated(object sender, Microsoft.UI.Xaml.WindowActivatedEventArgs e)
+	// {
+	// 	DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
+	// }
+
+	private void AppWindow_Changed(Microsoft.UI.Windowing.AppWindow sender, Microsoft.UI.Windowing.AppWindowChangedEventArgs args)
+	{
+		if (_overlappedPresenter.State is Microsoft.UI.Windowing.OverlappedPresenterState.Maximized) WindowMaximiseIcon.Glyph     = "\uE923";
+		else if (_overlappedPresenter.State is Microsoft.UI.Windowing.OverlappedPresenterState.Restored) WindowMaximiseIcon.Glyph = "\uE922";
 	}
 
 	private string GetAppTitleFromSystem()
@@ -59,6 +76,15 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 				if (_current.Content is Microsoft.UI.Xaml.FrameworkElement rootElement) rootElement.RequestedTheme = (rootElement.ActualTheme == Microsoft.UI.Xaml.ElementTheme.Light ? Microsoft.UI.Xaml.ElementTheme.Dark : Microsoft.UI.Xaml.ElementTheme.Light);
 				break;
 		}
+	}
+
+	private void Block1_OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+	{
+		var Grid = sender as Microsoft.UI.Xaml.Controls.Grid;
+		Grid.UpdateLayout();
+
+		MyRectangle.Width  = Grid.ActualWidth;
+		MyRectangle.Height = Grid.ActualHeight;
 	}
 
 	private void Block_OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
