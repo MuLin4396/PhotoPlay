@@ -20,21 +20,21 @@
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 			<StackPanel Grid.Column="0" x:Name="NavigationViewButton" Orientation="Horizontal" Margin="6,6,6,6">
-				<Button x:Name="NavigationBackButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationBackButton_OnClick">
+				<Button x:Name="NavigationBackButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationBackButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedBackVisualSource />
 						</AnimatedIcon.Source>
 					</AnimatedIcon>
 				</Button>
-				<Button x:Name="NavigationGlobalButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationGlobalButton_OnClick">
+				<Button x:Name="NavigationGlobalButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationGlobalButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedGlobalNavigationButtonVisualSource />
 						</AnimatedIcon.Source>
 					</AnimatedIcon>
 				</Button>
-				<Button x:Name="NavigationSettButton" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+				<Button x:Name="NavigationSettButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedSettingsVisualSource />
@@ -56,13 +56,13 @@
 				</Grid>
 			</Grid>
 			<StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
-				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
+				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
 					<FontIcon Glyph="&#xF08C;" FontSize="14" />
 				</Button>
-				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
+				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
 					<FontIcon Glyph="&#xE921;" FontSize="10" />
 				</Button>
-				<Button Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
+				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
 					<FontIcon Glyph="&#xE922;" FontSize="10" x:Name="WindowMaximiseIcon" />
 				</Button>
 				<Button Style="{ThemeResource WindowsButton}" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowClose">
