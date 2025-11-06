@@ -26,17 +26,10 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 		DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
 
-		// Activated += AppWindow_Activated;
-
 		_appWindow.Changed += AppWindow_Changed;
 
 		Closed += (s, e) => _appWindow.Changed -= AppWindow_Changed;
 	}
-
-	// private void AppWindow_Activated(object sender, Microsoft.UI.Xaml.WindowActivatedEventArgs e)
-	// {
-	// 	DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
-	// }
 
 	private void AppWindow_Changed(Microsoft.UI.Windowing.AppWindow sender, Microsoft.UI.Windowing.AppWindowChangedEventArgs args)
 	{
@@ -63,8 +56,9 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 	private void WindowsButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs routedEventArgs)
 	{
-		Microsoft.UI.Xaml.Controls.Control? control = sender as Microsoft.UI.Xaml.Controls.Control;
-		string?                             Tag     = control.Tag as string;
+		// Microsoft.UI.Xaml.Controls.Control? control1 = sender as Microsoft.UI.Xaml.Controls.Control;
+		dynamic control = sender;
+		string? Tag     = control.Tag as string;
 
 		switch (Tag)
 		{
@@ -80,26 +74,20 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 	private void Block1_OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
 	{
-		var Grid = sender as Microsoft.UI.Xaml.Controls.Grid;
-		Grid.UpdateLayout();
+		var grid = sender as Microsoft.UI.Xaml.Controls.Grid;
+		grid.UpdateLayout();
 
-		MyRectangle.Width  = Grid.ActualWidth;
-		MyRectangle.Height = Grid.ActualHeight;
+		MyRectangle.Width  = grid.ActualWidth;
+		MyRectangle.Height = grid.ActualHeight;
 	}
 
 	private void Block_OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
 	{
 		var textBlock = sender as Microsoft.UI.Xaml.Controls.TextBlock;
-		// 确保文本已渲染
 		textBlock.UpdateLayout();
 
-		// 获取 TextBlock 实际渲染后的宽度
-		double textBlockWidth  = textBlock.ActualWidth;
-		double textBlockHeight = textBlock.ActualHeight;
-
-		// 设置 Border 的宽度为 TextBlock 宽度 + 8
-		MyBorder.Width  = textBlockWidth + 12;
-		MyBorder.Height = textBlockHeight + 16;
+		MyBorder.Width  = textBlock.ActualWidth + 12;
+		MyBorder.Height = textBlock.ActualHeight + 6;
 	}
 
 	private void NavigationBackButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)

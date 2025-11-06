@@ -55,27 +55,44 @@
 					</Border>
 				</Grid>
 			</Grid>
-			<Border Grid.Column="1" x:Name="MyRectangle" Background="Transparent">
+			<Border Grid.Column="1" x:Name="MyRectangle" Background="Transparent" DoubleTapped="WindowsButton_OnClick" Tag="WindowMaximise">
 				<Border.ContextFlyout>
 					<MenuFlyout>
-						<MenuFlyout.Items>
-							<MenuFlyoutItem Text="Close" Click="WindowsButton_OnClick" Tag="WindowClose">
-								<MenuFlyoutItem.Icon>
-									<FontIcon Glyph="&#xE8BB;" />
-								</MenuFlyoutItem.Icon>
-							</MenuFlyoutItem>
-						</MenuFlyout.Items>
+						<MenuFlyoutItem Text="Theme" Tag="WindowTheme" Click="WindowsButton_OnClick">
+							<MenuFlyoutItem.Icon>
+								<FontIcon Glyph="&#xF08C;" />
+							</MenuFlyoutItem.Icon>
+						</MenuFlyoutItem>
+						<MenuFlyoutItem Text="Min" Tag="WindowMinimise" Click="WindowsButton_OnClick">
+							<MenuFlyoutItem.Icon>
+								<FontIcon Glyph="&#xE921;" />
+							</MenuFlyoutItem.Icon>
+						</MenuFlyoutItem>
+						<MenuFlyoutItem Text="Max" Tag="WindowMaximise" Click="WindowsButton_OnClick">
+							<MenuFlyoutItem.Icon>
+								<FontIcon Glyph="&#xE922;" />
+							</MenuFlyoutItem.Icon>
+						</MenuFlyoutItem>
+						<MenuFlyoutSeparator />
+						<MenuFlyoutItem Text="Close" Tag="WindowClose" Click="WindowsButton_OnClick">
+							<MenuFlyoutItem.Icon>
+								<FontIcon Glyph="&#xE8BB;" />
+							</MenuFlyoutItem.Icon>
+							<MenuFlyoutItem.KeyboardAccelerators>
+								<KeyboardAccelerator Key="F4" Modifiers="Menu" />
+							</MenuFlyoutItem.KeyboardAccelerators>
+						</MenuFlyoutItem>
 					</MenuFlyout>
 				</Border.ContextFlyout>
 			</Border>
 			<StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
-				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
+				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
 					<FontIcon Glyph="&#xF08C;" FontSize="14" />
 				</Button>
-				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
+				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
 					<FontIcon Glyph="&#xE921;" FontSize="10" />
 				</Button>
-				<Button IsTabStop="False"  Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
+				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
 					<FontIcon Glyph="&#xE922;" FontSize="10" x:Name="WindowMaximiseIcon" />
 				</Button>
 				<Button Style="{ThemeResource WindowsButton}" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowClose">
