@@ -63,8 +63,8 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 	private void WindowsButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs routedEventArgs)
 	{
-		Microsoft.UI.Xaml.Controls.Button? senderButton = sender as Microsoft.UI.Xaml.Controls.Button;
-		string?                            Tag          = senderButton.Tag as string;
+		Microsoft.UI.Xaml.Controls.Control? control = sender as Microsoft.UI.Xaml.Controls.Control;
+		string?                             Tag     = control.Tag as string;
 
 		switch (Tag)
 		{

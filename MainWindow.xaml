@@ -59,7 +59,11 @@
 				<Border.ContextFlyout>
 					<MenuFlyout>
 						<MenuFlyout.Items>
-							<MenuFlyoutItem Text="11111"></MenuFlyoutItem>
+							<MenuFlyoutItem Text="Close" Click="WindowsButton_OnClick" Tag="WindowClose">
+								<MenuFlyoutItem.Icon>
+									<FontIcon Glyph="&#xE8BB;" />
+								</MenuFlyoutItem.Icon>
+							</MenuFlyoutItem>
 						</MenuFlyout.Items>
 					</MenuFlyout>
 				</Border.ContextFlyout>

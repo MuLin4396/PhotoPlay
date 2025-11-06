@@ -34,7 +34,7 @@
     <ItemGroup>
         <PackageReference Include="DevWinUI.Controls" Version="9.4.2" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6901" />
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.250930001-experimental1" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.0-experimental2" />
     </ItemGroup>
 
     <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
