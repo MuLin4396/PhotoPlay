@@ -101,20 +101,42 @@
 			</StackPanel>
 		</Grid>
 		<Grid Grid.Row="1">
-			<NavigationView x:Name="NavigationView" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False" Style="{ThemeResource  WindowsNavigationView}">
+			<NavigationView x:Name="NavigationView" ItemInvoked="NavigationView_OnItemInvoked" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False" Style="{ThemeResource  WindowsNavigationView}">
 				<NavigationView.MenuItems>
-					<NavigationViewItem Content="Calendar" Icon="Calendar" />
-					<NavigationViewItem Content="Downloads">
+					<NavigationViewItem Content="Home">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE80F;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+					<NavigationViewItem Content="Favorites">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE734;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+					<NavigationViewItem Content="Explore">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE753;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
-					<NavigationViewItem Content="Library">
+					<NavigationViewItem Content="Categories">
 						<NavigationViewItem.Icon>
-							<FontIcon Glyph="&#xE8F1;" />
+							<FontIcon Glyph="&#xED58;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 				</NavigationView.MenuItems>
+				<NavigationView.FooterMenuItems>
+					<NavigationViewItem Content="Search">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE721;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+					<NavigationViewItem Content="Settings">
+						<NavigationViewItem.Icon>
+							<FontIcon Glyph="&#xE713;" />
+						</NavigationViewItem.Icon>
+					</NavigationViewItem>
+				</NavigationView.FooterMenuItems>
+				<Frame x:Name="NavigationViewFrame" Margin="8" CornerRadius="8" />
 			</NavigationView>
 		</Grid>
 	</Grid>

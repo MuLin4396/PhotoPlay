@@ -32,7 +32,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style x:Key="WindowsNavigationView" TargetType="NavigationView">
+	<Style x:Key="WindowsNavigationView" TargetType="NavigationView" BasedOn="{StaticResource NavigationViewStoreStyle}">
 		<Setter Property="PaneToggleButtonStyle" Value="{StaticResource PaneToggleButtonStyle}" />
 		<Setter Property="IsTabStop" Value="False" />
 		<Setter Property="CompactPaneLength" Value="{ThemeResource NavigationViewCompactPaneLength}" />

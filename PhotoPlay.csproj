@@ -13,6 +13,9 @@
         <EnableMsixTooling>true</EnableMsixTooling>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Pages\HomePage.xaml" />
+    </ItemGroup>
 
     <ItemGroup>
         <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -35,6 +38,11 @@
         <PackageReference Include="DevWinUI.Controls" Version="9.4.2" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6901" />
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.0-experimental2" />
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Pages\HomePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
     </ItemGroup>
 
     <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">

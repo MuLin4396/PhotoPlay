@@ -100,4 +100,15 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 	{
 		NavigationView.IsPaneOpen = !NavigationView.IsPaneOpen;
 	}
+
+	private void NavigationView_OnItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
+	{
+		string selectedPage = args.InvokedItem.ToString();
+
+		switch (selectedPage)
+		{
+			case "Home": NavigationViewFrame.Navigate(typeof(Pages.HomePage)); break;
+			default: break;
+		}
+	}
 }
