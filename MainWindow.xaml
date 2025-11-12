@@ -136,7 +136,7 @@
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 				</NavigationView.FooterMenuItems>
-				<Frame x:Name="NavigationViewFrame" Margin="8" CornerRadius="8" />
+				<Frame x:Name="NavigationViewFrame" Margin="8,4,8,8" CornerRadius="8" />
 			</NavigationView>
 		</Grid>
 	</Grid>

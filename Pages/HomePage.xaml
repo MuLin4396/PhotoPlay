@@ -5,11 +5,27 @@
 	xmlns:local="using:PhotoPlay.Pages"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:dev="using:DevWinUI"
 	mc:Ignorable="d">
-	<Grid>
-		<Border Background="Red" />
+	<Grid CornerRadius="8">
+		<Border Background="{ThemeResource LayerOnAcrylicFillColorDefaultBrush}" />
 		<Grid>
-			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<dev:HomePageHeader Grid.Row="0" HeaderImage="ms-appx:///Assets/HeaderImage.jpeg" HeaderImageHeight="400" Height="400" HeaderText="PhotoPlay" HeaderSubtitleText="display_test">
+				<dev:HomePageHeader.HeaderContent>
+					<StackPanel Orientation="Horizontal" Spacing="8">
+						<dev:HeaderTile Title="DevWinUI" Description="这是一段文字" Link="https://github.com/MuLin4396/PhotoPlay" />
+					</StackPanel>
+				</dev:HomePageHeader.HeaderContent>
+			</dev:HomePageHeader>
+			<ScrollView Grid.Row="1">
+				<StackPanel Orientation="Vertical" Spacing="8">
+					<dev:HeaderTile Title="DevWinUI" Description="这是一段文字" Link="https://github.com/MuLin4396/PhotoPlay" />
+				</StackPanel>
+			</ScrollView>
 		</Grid>
 	</Grid>
 </Page>
