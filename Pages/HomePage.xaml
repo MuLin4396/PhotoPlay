@@ -22,9 +22,10 @@
 				</dev:HomePageHeader.HeaderContent>
 			</dev:HomePageHeader>
 			<ScrollView Grid.Row="1">
-				<StackPanel Orientation="Vertical" Spacing="8">
-					<dev:HeaderTile Title="DevWinUI" Description="这是一段文字" Link="https://github.com/MuLin4396/PhotoPlay" />
-				</StackPanel>
+				<GridView>
+					<!-- todo ImageCard -->
+					<dev:InfoCard Title="DevWinUI" Description="这是一段文字" Icon="ms-appx:///Assets/HeaderImage.jpeg" />
+				</GridView>
 			</ScrollView>
 		</Grid>
 	</Grid>

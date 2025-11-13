@@ -92,8 +92,8 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 	private void NavigationBackButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
 	{
-		if (true) NavigationView.IsPaneOpen = !NavigationView.IsPaneOpen;
-		else throw new System.NotImplementedException();
+		NavigationView.IsPaneOpen = !NavigationView.IsPaneOpen;
+		// todo NavigationBackButton_OnClick
 	}
 
 	private void NavigationGlobalButton_OnClick(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
