@@ -26,6 +26,8 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 		DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
 
+		NavigationViewFrame.Navigate(typeof(Pages.HomePage));
+
 		_appWindow.Changed += AppWindow_Changed;
 
 		Closed += (s, e) => _appWindow.Changed -= AppWindow_Changed;
@@ -103,12 +105,19 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 	private void NavigationView_OnItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
 	{
-		string selectedPage = args.InvokedItem.ToString();
+		System.Type targetPageType;
 
-		switch (selectedPage)
+		switch (args.InvokedItem.ToString())
 		{
-			case "Home": NavigationViewFrame.Navigate(typeof(Pages.HomePage)); break;
-			default: break;
+			case "Home": targetPageType       = typeof(Pages.HomePage); break;
+			case "Favorites": targetPageType  = typeof(Pages.FavoritesPage); break;
+			case "Explore": targetPageType    = typeof(Pages.ExplorePage); break;
+			case "Categories": targetPageType = typeof(Pages.CategoriesPage); break;
+			case "Search": targetPageType     = typeof(Pages.SearchPage); break;
+			case "Settings": targetPageType   = typeof(Pages.SettingsPage); break;
+			default: return;
 		}
+
+		if (NavigationViewFrame.SourcePageType != targetPageType) NavigationViewFrame.Navigate(targetPageType);
 	}
 }
