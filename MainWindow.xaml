@@ -20,21 +20,21 @@
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 			<StackPanel Grid.Column="0" x:Name="NavigationViewButton" Orientation="Horizontal" Margin="6,6,6,6">
-				<Button x:Name="NavigationBackButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationBackButton_OnClick">
+				<Button x:Name="NavigationBackButton" IsTabStop="False" Visibility="Collapsed" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationBackButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedBackVisualSource />
 						</AnimatedIcon.Source>
 					</AnimatedIcon>
 				</Button>
-				<Button x:Name="NavigationGlobalButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationGlobalButton_OnClick">
+				<Button x:Name="NavigationGlobalButton" IsTabStop="False" Visibility="Collapsed" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="NavigationGlobalButton_OnClick">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedGlobalNavigationButtonVisualSource />
 						</AnimatedIcon.Source>
 					</AnimatedIcon>
 				</Button>
-				<Button x:Name="NavigationSettButton" IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
+				<Button x:Name="NavigationSettButton" IsTabStop="False" Visibility="Collapsed" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}">
 					<AnimatedIcon>
 						<AnimatedIcon.Source>
 							<animatedvisuals:AnimatedSettingsVisualSource />
@@ -103,40 +103,40 @@
 		<Grid Grid.Row="1">
 			<NavigationView x:Name="NavigationView" ItemInvoked="NavigationView_OnItemInvoked" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" PaneDisplayMode="Left" IsSettingsVisible="False" Style="{ThemeResource  WindowsNavigationView}">
 				<NavigationView.MenuItems>
-					<NavigationViewItem Content="Home">
+					<NavigationViewItem Content="Home" Tag="HomePage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE80F;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
-					<NavigationViewItem Content="Favorites">
+					<NavigationViewItem Content="Favorites" Tag="FavoritesPage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE734;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
-					<NavigationViewItem Content="Explore">
+					<NavigationViewItem Content="Explore" Tag="ExplorePage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE753;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
-					<NavigationViewItem Content="Categories">
+					<NavigationViewItem Content="Categories" Tag="CategoriesPage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xED58;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 				</NavigationView.MenuItems>
 				<NavigationView.FooterMenuItems>
-					<NavigationViewItem Content="Search">
+					<NavigationViewItem Content="Search" Tag="SearchPage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE721;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
-					<NavigationViewItem Content="Settings">
+					<NavigationViewItem Content="Settings" Tag="SettingsPage">
 						<NavigationViewItem.Icon>
 							<FontIcon Glyph="&#xE713;" />
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 				</NavigationView.FooterMenuItems>
-				<Frame x:Name="NavigationViewFrame" Margin="8,4,8,8" CornerRadius="8" />
+				<Frame x:Name="NavigationViewFrame" Margin="8,4,8,8" CornerRadius="8" Navigated="NavigationViewFrame_OnNavigated" />
 			</NavigationView>
 		</Grid>
 	</Grid>
