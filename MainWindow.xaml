@@ -127,12 +127,20 @@
 				<NavigationView.FooterMenuItems>
 					<NavigationViewItem Content="Search" Tag="SearchPage">
 						<NavigationViewItem.Icon>
-							<FontIcon Glyph="&#xE721;" />
+							<AnimatedIcon>
+								<AnimatedIcon.Source>
+									<animatedvisuals:AnimatedFindVisualSource />
+								</AnimatedIcon.Source>
+							</AnimatedIcon>
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 					<NavigationViewItem Content="Settings" Tag="SettingsPage">
 						<NavigationViewItem.Icon>
-							<FontIcon Glyph="&#xE713;" />
+							<AnimatedIcon>
+								<AnimatedIcon.Source>
+									<animatedvisuals:AnimatedSettingsVisualSource />
+								</AnimatedIcon.Source>
+							</AnimatedIcon>
 						</NavigationViewItem.Icon>
 					</NavigationViewItem>
 				</NavigationView.FooterMenuItems>

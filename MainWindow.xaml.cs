@@ -18,16 +18,6 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 		["SettingsPage"]   = typeof(Pages.SettingsPage)
 	};
 
-	// private readonly System.Collections.Generic.BidirectionalDictionary<string, System.Type> _pageTypeMap2 = new()
-	// {
-	// 	["HomePage"]       = typeof(Pages.HomePage),
-	// 	["FavoritesPage"]  = typeof(Pages.FavoritesPage),
-	// 	["ExplorePage"]    = typeof(Pages.ExplorePage),
-	// 	["CategoriesPage"] = typeof(Pages.CategoriesPage),
-	// 	["SearchPage"]     = typeof(Pages.SearchPage),
-	// 	["SettingsPage"]   = typeof(Pages.SettingsPage)
-	// };
-
 	public MainWindow()
 	{
 		InitializeComponent();
@@ -127,18 +117,9 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 		NavigationBackButton.Visibility = NavigationViewFrame.CanGoBack ? Microsoft.UI.Xaml.Visibility.Visible : Microsoft.UI.Xaml.Visibility.Collapsed;
 	}
 
-	// private void UpdateNavigationViewSelectedItem()
-	// {
-	// 	_pageTypeMap2.Reverse();
-	// 	
-	//
-	// 	NavigationView.SelectedItem = System.Linq.Enumerable.FirstOrDefault(System.Linq.Enumerable.OfType<Microsoft.UI.Xaml.Controls.NavigationViewItem>(System.Linq.Enumerable.Concat(NavigationView.MenuItems, NavigationView.FooterMenuItems)), i => i.Tag?.ToString() == targetKey);
-	// }
-
 	private void NavigationViewFrame_OnNavigated(object sender, Microsoft.UI.Xaml.Navigation.NavigationEventArgs e)
 	{
 		UpdateBackButtonVisibility();
-		// UpdateNavigationViewSelectedItem();
 	}
 
 	private void NavigationView_OnItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
