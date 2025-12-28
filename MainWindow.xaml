@@ -85,14 +85,14 @@
 					</MenuFlyout>
 				</Border.ContextFlyout>
 			</Border>
-			<StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
+			<StackPanel x:Name="AppTitleBarButtonStackPanel" Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,6,6,6">
 				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowTheme">
 					<FontIcon Glyph="&#xF08C;" FontSize="14" />
 				</Button>
 				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMinimise">
 					<FontIcon Glyph="&#xE921;" FontSize="10" />
 				</Button>
-				<Button IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
+				<Button x:Name="WindowMaximise"  IsTabStop="False" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowMaximise">
 					<FontIcon Glyph="&#xE922;" FontSize="10" x:Name="WindowMaximiseIcon" />
 				</Button>
 				<Button Style="{ThemeResource WindowsButton}" Visibility="Visible" Width="36" Height="36" Background="Transparent" BorderThickness="0" CornerRadius="{ThemeResource ControlCornerRadius}" Click="WindowsButton_OnClick" Tag="WindowClose">

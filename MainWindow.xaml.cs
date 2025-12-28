@@ -34,7 +34,13 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
 		ExtendsContentIntoTitleBar = true;
 
+		SetTitleBar(AppTitleBarButtonStackPanel);
+
 		DevWinUI.DragMoveAndResizeHelper.SetDragMove(_current, MyRectangle);
+
+		var snap =new DevWinUI.SnapLayoutManager();
+		
+		snap.Attach(_current, WindowMaximise);
 
 		NavigationViewFrame.Navigate(typeof(Pages.HomePage));
 
